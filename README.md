@@ -1,3 +1,36 @@
+# Signal — Contradiction Catcher
+
+**Live app:** https://signal-os4fq4ksw-shravani-shinde-s-projects.vercel.app/
+
+**AS-02 · Communication** — ArchScale Guild Hackathon
+
+Most AI communication tools (Slack AI, Notion AI, meeting-note bots) summarize
+threads or extract action items. Signal does something narrower and less
+covered: it reads a project communication thread and flags when **two people
+are unknowingly saying conflicting things** — different deadlines, different
+scope calls, different ownership assumptions — and automatically triggers a
+clarification request instead of leaving the conflict buried.
+
+> Other tools tell you what was said. Signal tells you what doesn't add up.
+
+## How it works
+
+1. Paste a thread (chat log, email thread, meeting notes) into the UI.
+2. The backend sends it to an LLM with a structured function-calling schema
+   that forces it to extract claims by topic and compare them across speakers.
+   Runs on Groq's free tier — no credit card, no per-token cost.
+3. If two claims on the same topic conflict, Signal **triggers** a
+   clarification message tagging both people — this is the "act", not just
+   "report", step.
+4. If nothing conflicts, it falls back to a short plain-language summary.
+
+## Stack
+
+- **Backend:** FastAPI + Groq API, free tier (function calling / tool use)
+- **Frontend:** React (Vite), no UI framework — plain CSS with a small design
+  token system
+- **Deployment:** Backend on Render, frontend on Vercel
+
 
 ## Quick start (local demo)
 
