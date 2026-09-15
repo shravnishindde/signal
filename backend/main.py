@@ -30,7 +30,7 @@ app = FastAPI(title="Signal API", version="0.1.0")
 # Allow the local Vite dev server and any deployed frontend to call this API.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # tighten to your deployed frontend URL before submitting
+    allow_origins=["https://signal-afk1.onrender.com/","http://localhost:5173"],  # tighten to your deployed frontend URL before submitting
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
