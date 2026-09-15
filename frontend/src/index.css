@@ -1,0 +1,59 @@
+:root {
+  /* Color — a night-monitoring-station palette, not the generic warm-cream/terracotta default */
+  --bg: #0d1117;
+  --bg-raised: #151b23;
+  --bg-inset: #0a0e13;
+  --line: #232b36;
+  --text: #e9edf1;
+  --text-muted: #8b95a3;
+  --text-faint: #545d6b;
+
+  --signal: #4fd1c5;         /* the "active scan" cyan — the one bold accent */
+  --signal-dim: #2a6b66;
+
+  --high: #ff6b5e;
+  --medium: #f2a93b;
+  --low: #7c9ef5;
+  --clear: #56c288;
+
+  /* Type */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--signal-dim);
+  color: var(--text);
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
