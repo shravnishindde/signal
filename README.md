@@ -1,5 +1,7 @@
 # Signal — Contradiction Catcher
 
+**Live app:** https://signal-os4fq4ksw-shravani-shinde-s-projects.vercel.app/
+
 **AS-02 · Communication** — ArchScale Guild Hackathon
 
 Most AI communication tools (Slack AI, Notion AI, meeting-note bots) summarize
@@ -8,6 +10,8 @@ covered: it reads a project communication thread and flags when **two people
 are unknowingly saying conflicting things** — different deadlines, different
 scope calls, different ownership assumptions — and automatically triggers a
 clarification request instead of leaving the conflict buried.
+
+> Other tools tell you what was said. Signal tells you what doesn't add up.
 
 ## How it works
 
@@ -25,14 +29,8 @@ clarification request instead of leaving the conflict buried.
 - **Backend:** FastAPI + Groq API, free tier (function calling / tool use)
 - **Frontend:** React (Vite), no UI framework — plain CSS with a small design
   token system
+- **Deployment:** Backend on Render, frontend on Vercel
 
-## Project structure
-
-```
-signal/
-├── backend/     FastAPI service — see backend/README.md
-└── frontend/    React app — see frontend/README.md
-```
 
 ## Quick start (local demo)
 
@@ -53,7 +51,7 @@ npm run dev
 Open http://localhost:5173, click one of the three example threads
 (deadline conflict / scope conflict / no conflict), and hit **Scan thread**.
 
-## Demo script (for the video walkthrough)
+## Demo script
 
 1. Open the app, paste the **deadline conflict** example.
 2. Hit Scan — narrate what's happening while it runs.
@@ -61,5 +59,4 @@ Open http://localhost:5173, click one of the three example threads
    clarification message underneath — this is the differentiator: it doesn't
    just summarize, it acts.
 4. Paste the **no conflict** example to show it doesn't false-flag.
-5. Close with the one-line pitch: *"Other tools tell you what was said.
-   Signal tells you what doesn't add up."*
+5. Close with the one-line pitch above.
